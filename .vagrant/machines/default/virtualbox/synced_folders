@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/memc-client":{"mount_options":["dmode=755","fmode=775","uid=1000","gid=1000"],"guestpath":"/home/vagrant/memc-client","hostpath":"C:/Users/jouge/code/memc-client","disabled":false,"__vagrantfile":true}}}
