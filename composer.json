@@ -8,6 +8,12 @@
         }
     ],
     "require": {},
+    "require-dev": {
+        "ext-xml": "*",
+        "ext-mbstring": "*",
+        "ext-zip": "*",
+        "phpunit/phpunit": "6.5.5"
+    },
     "autoload": {
         "psr-4": {
             "App\\": "src/"
