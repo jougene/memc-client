@@ -71,6 +71,7 @@ TEXT;
     {
         $this->client->delete('foo');
     }
+
     /**
      * @test
      */
@@ -78,6 +79,17 @@ TEXT;
     {
         $this->client->set('foo', 'bar');
         $this->assertTrue($this->client->delete('foo'));
+    }
+
+    /**
+     * @expectedException \App\Exceptions\NotFoundException
+     * @test
+     */
+    public function canNotGetDeletedKey()
+    {
+        $this->client->set('foo', 'bar');
+        $this->client->delete('foo');
+        $this->client->get('foo');
     }
 }
 
