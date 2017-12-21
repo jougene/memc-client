@@ -2,28 +2,18 @@
 
 namespace Tests;
 
-use App\Client;
+use App\MemcClient;
 use PHPUnit\Framework\TestCase;
-use Serializable;
 
 /**
- * @property Client client
+ * @property MemcClient client
  */
 class MemcClientTest extends TestCase
 {
     protected function setUp()
     {
-        $this->client = new Client();
-        $this->client->addServer('localhost', 11211);
+        $this->client = new MemcClient('localhost', 11211);
         $this->client->flushAll();
-    }
-
-    /**
-     * @test
-     */
-    public function canSetKeyValuePair()
-    {
-        $this->assertTrue($this->client->set('foo', 'bar'));
     }
 
     /**
@@ -93,7 +83,7 @@ TEXT;
     }
 }
 
-class GgWpClass implements Serializable
+class GgWpClass
 {
     const FOO = 42;
 
@@ -102,15 +92,5 @@ class GgWpClass implements Serializable
     private function getProp()
     {
         return $this->prop;
-    }
-
-    public function serialize()
-    {
-        return serialize($this->prop);
-    }
-
-    public function unserialize($serialized)
-    {
-        $this->prop = unserialize($serialized);
     }
 }

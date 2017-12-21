@@ -5,11 +5,16 @@ namespace App;
 use App\Exceptions\NotFoundException;
 use RuntimeException;
 
-class Client
+class MemcClient
 {
     const EOL = "\r\n";
 
     private $socket;
+
+    public function __construct(string $address, int $port)
+    {
+        $this->socket = fsockopen($address, $port);
+    }
 
     public function get($key)
     {
@@ -60,11 +65,6 @@ class Client
     {
         $this->writeSocket("flush_all");
         $this->readSocket();
-    }
-
-    public function addServer(string $address, int $port)
-    {
-        $this->socket = fsockopen($address, $port);
     }
 
     private function readSocket()
