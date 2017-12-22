@@ -1,0 +1,10 @@
+version: "2.1"
+
+services:
+  memc-client:
+    container_name: memc-client
+    build: .
+    volumes:
+      - ".:/app"
+    working_dir: /app
+    entrypoint: ["/usr/bin/memcached", "-u", "root"]

@@ -7,9 +7,7 @@
             "email": "djorka91@mail.ru"
         }
     ],
-    "require": {
-        "psr/simple-cache": "1.0.0"
-    },
+    "require": {},
     "require-dev": {
         "ext-xml": "*",
         "ext-mbstring": "*",
@@ -18,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "Jougene\\": "src/"
         }
     },
     "autoload-dev": {
