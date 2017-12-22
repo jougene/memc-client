@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exceptions;
+namespace Jougene\Exceptions;
 
 class NotFoundException extends \RuntimeException
 {

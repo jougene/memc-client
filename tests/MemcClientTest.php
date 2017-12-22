@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\MemcClient;
+use Jougene\MemcClient;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -17,7 +17,7 @@ class MemcClientTest extends TestCase
     }
 
     /**
-     * @expectedException \App\Exceptions\NotFoundException
+     * @expectedException \Jougene\Exceptions\NotFoundException
      * @test
      */
     public function canNotGetNonExistingValue()
@@ -54,7 +54,7 @@ TEXT;
     }
 
     /**
-     * @expectedException \App\Exceptions\NotFoundException
+     * @expectedException \Jougene\Exceptions\NotFoundException
      * @test
      */
     public function canNotDeleteNonExistingValue()
@@ -72,7 +72,7 @@ TEXT;
     }
 
     /**
-     * @expectedException \App\Exceptions\NotFoundException
+     * @expectedException \Jougene\Exceptions\NotFoundException
      * @test
      */
     public function canNotGetDeletedKey()

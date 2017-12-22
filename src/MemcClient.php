@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace Jougene;
 
-use App\Exceptions\NotFoundException;
+use Jougene\Exceptions\NotFoundException;
 use RuntimeException;
 
 class MemcClient
